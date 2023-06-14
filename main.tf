@@ -1,3 +1,10 @@
+terraform {
+  backend "gcs" {
+    bucket = "refreshing-oven-388713-bucket"
+    prefix = "terraform/state"
+  }
+}
+
 module "github_repository" {
   source                   = "github.com/den-vasyliev/tf-github-repository"
   github_owner             = var.GITHUB_OWNER
